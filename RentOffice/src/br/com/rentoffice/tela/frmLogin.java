@@ -8,6 +8,7 @@ package br.com.rentoffice.tela;
 import br.com.rentoffice.business.LoginBusiness;
 import br.com.rentoffice.business.interfaces.LoginInterface;
 import br.com.rentoffice.dominio.Locador;
+import br.com.rentoffice.dominio.Locatario;
 import java.awt.Color;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -49,6 +50,7 @@ public class frmLogin extends javax.swing.JFrame {
         btnLogin = new javax.swing.JButton();
         btnCadastrar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        btnLocatario = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("frmLogin0");
@@ -70,7 +72,7 @@ public class frmLogin extends javax.swing.JFrame {
         jLabel3.setText("Senha");
 
         btnLogin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnLogin.setText("Login");
+        btnLogin.setText("Locador");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
@@ -94,16 +96,18 @@ public class frmLogin extends javax.swing.JFrame {
         jLabel4.setOpaque(true);
         jLabel4.setRequestFocusEnabled(false);
 
+        btnLocatario.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnLocatario.setText("Locatario");
+        btnLocatario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLocatarioActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnCadastrar)
-                .addGap(53, 53, 53)
-                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(220, 220, 220))
             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -117,8 +121,18 @@ public class frmLogin extends javax.swing.JFrame {
                 .addGap(230, 230, 230))
             .addGroup(layout.createSequentialGroup()
                 .addGap(112, 112, 112)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 29, Short.MAX_VALUE)
+                        .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(66, 66, 66)
+                        .addComponent(btnLocatario)
+                        .addGap(71, 71, 71)
+                        .addComponent(btnCadastrar)
+                        .addGap(85, 85, 85))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,11 +148,12 @@ public class frmLogin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47)
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
-                    .addComponent(btnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(84, 84, 84))
+                    .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLocatario, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         setSize(new java.awt.Dimension(669, 523));
@@ -153,14 +168,16 @@ public class frmLogin extends javax.swing.JFrame {
         LoginInterface loginBusiness = new LoginBusiness();
        
         Locador locador = loginBusiness.logarLocadorUsuario(nomeUsuario, senhaUsuario);
-        if(locador!=null){
+        if(locador!=null){ 
             System.out.println("Usuario Autenticado") ;  
              frmLocador frm = new frmLocador(locador);
              frm.setVisible(true);
             this.dispose();
         }else{
             System.err.println("Usuario Inexistente");  
-        }  
+        }
+        
+        
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
@@ -168,6 +185,23 @@ public class frmLogin extends javax.swing.JFrame {
         frmCadastro frm = new frmCadastro ();
         frm.setVisible(true);
     }//GEN-LAST:event_btnCadastrarActionPerformed
+
+    private void btnLocatarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLocatarioActionPerformed
+        String nomeUsuario = txtUsuario.getText();        
+        String senhaUsuario = txtSenha.getText();
+        
+        LoginInterface loginBusiness = new LoginBusiness();
+        
+        Locatario locatario = loginBusiness.logarLocatario(nomeUsuario, senhaUsuario);
+        if(locatario!=null){ 
+            System.out.println("Usuario Autenticado") ;  
+             frmLocador frm = new frmLocador();
+             frm.setVisible(true);
+            this.dispose();
+        }else{
+            System.err.println("Usuario Inexistente");  
+        }  
+    }//GEN-LAST:event_btnLocatarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,6 +241,7 @@ public class frmLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrar;
+    private javax.swing.JButton btnLocatario;
     private javax.swing.JButton btnLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

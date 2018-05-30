@@ -14,6 +14,17 @@ import br.com.rentoffice.business.interfaces.LoginInterface;
  */
 public class LoginMock {
     
-    
+    public static void main(String args[]){
+     String nomeUsuario = "Bruno";        
+        String senhaUsuario = "123";
+        
+        LoginInterface loginBusiness = new LoginBusiness();
+        
+        if(loginBusiness.logarUsuario(nomeUsuario, senhaUsuario)){
+            System.out.println("Usuario Autenticado");
+        }else{
+            System.err.println("Usuario Inexistente");
+        }
+    }   
 
 }

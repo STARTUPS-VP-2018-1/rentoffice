@@ -19,7 +19,7 @@ public class LocadorBusinessTest {
         LocadorBusiness lb = new LocadorBusiness();
         
         Locador lo = new Locador();
-        lo.setRsocaill_LD("Bloodborne");
+        lo.setRsocaill_LD("Cleber");
         lo.setCNPJ("4196019");
         
         try{
