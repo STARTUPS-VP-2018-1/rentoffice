@@ -11,7 +11,6 @@ import br.com.rentoffice.dominio.Locatario;
 import br.com.rentoffice.repositorio.Repositorio;
 import br.com.rentoffice.tela.frmLocador;
 import br.com.rentoffice.tela.frmLocatario;
-import br.com.rentoffice.tela.frmLogin;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,26 +18,6 @@ import javax.swing.JOptionPane;
  * @author internet
  */
 public class LoginBusiness implements LoginInterface{
-
-    @Override
-    public boolean logarUsuario(String nomeUsuario, String senhaUsuario) {
-        if(nomeUsuario.equals("Locador")& senhaUsuario.equals("123")){
-            JOptionPane.showMessageDialog(null,"Login Sucesso");
-            frmLocador frm = new frmLocador();
-             frm.setVisible(true);
-             return true;
-        } 
-        if(nomeUsuario.equals("Locatario")& senhaUsuario.equals("123")){
-            JOptionPane.showMessageDialog(null,"Login Sucesso");
-            frmLocatario frm = new frmLocatario();
-             frm.setVisible(true);
-             return true;
-        }else{
-            JOptionPane.showMessageDialog(null,"Usuairo invalido");
-        }
-            
-        return false;
-    }
 
     @Override
     public Locador logarLocadorUsuario(String nomeUsuario, String senhaUsuario) {
@@ -50,9 +29,7 @@ public class LoginBusiness implements LoginInterface{
             }
         }     
           return  locadorRetorno; 
-        
-       
-    
+
     }
 
     @Override
@@ -67,11 +44,6 @@ public class LoginBusiness implements LoginInterface{
           return  locatarioRetorno; 
     }
 
-    
-
-  
-    
-       
     }
     
          

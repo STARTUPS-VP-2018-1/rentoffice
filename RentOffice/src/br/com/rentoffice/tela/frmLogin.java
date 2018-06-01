@@ -10,11 +10,6 @@ import br.com.rentoffice.business.interfaces.LoginInterface;
 import br.com.rentoffice.dominio.Locador;
 import br.com.rentoffice.dominio.Locatario;
 import java.awt.Color;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author Gabriel
