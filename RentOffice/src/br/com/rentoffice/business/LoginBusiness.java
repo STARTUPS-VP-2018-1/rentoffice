@@ -10,7 +10,7 @@ import br.com.rentoffice.dominio.Locador;
 import br.com.rentoffice.dominio.Locatario;
 import br.com.rentoffice.repositorio.Repositorio;
 import br.com.rentoffice.tela.frmLocador;
-import br.com.rentoffice.tela.frmLocatario;
+import br.com.rentoffice.tela.frmEscritorios;
 import javax.swing.JOptionPane;
 
 /**

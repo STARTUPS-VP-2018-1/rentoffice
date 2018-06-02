@@ -190,7 +190,7 @@ public class frmLogin extends javax.swing.JFrame {
         Locatario locatario = loginBusiness.logarLocatario(nomeUsuario, senhaUsuario);
         if(locatario!=null){ 
             System.out.println("Usuario Autenticado") ;  
-             frmLocador frm = new frmLocador();
+             frmCategoria frm = new frmCategoria();
              frm.setVisible(true);
             this.dispose();
         }else{
