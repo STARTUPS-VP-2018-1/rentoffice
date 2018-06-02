@@ -175,15 +175,18 @@ public class frmEscritorios extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        // TODO add your handling code here:
+          frmConfirmaCompra frm = new frmConfirmaCompra();
+        frm.setVisible(true);
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-        // TODO add your handling code here:
+           frmConfirmaCompra frm = new frmConfirmaCompra();
+        frm.setVisible(true);
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        // TODO add your handling code here:
+           frmConfirmaCompra frm = new frmConfirmaCompra();
+        frm.setVisible(true);
     }//GEN-LAST:event_jLabel8MouseClicked
 
     /**
