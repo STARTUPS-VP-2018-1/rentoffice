@@ -6,9 +6,7 @@
 package br.com.rentoffice.business;
 
 import br.com.rentoffice.dominio.Locatario;
-import java.util.List;
 import br.com.rentoffice.business.interfaces.LocatarioInterface;
-import br.com.rentoffice.repositorio.Repositorio;
 
 
 public class LocatarioBusiness implements LocatarioInterface{

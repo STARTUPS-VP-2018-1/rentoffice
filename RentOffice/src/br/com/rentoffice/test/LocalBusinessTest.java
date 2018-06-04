@@ -8,7 +8,6 @@ package br.com.rentoffice.test;
 import br.com.rentoffice.business.LocalBusiness;
 import br.com.rentoffice.dominio.Endereco;
 import br.com.rentoffice.dominio.Local;
-import java.util.ArrayList;
 
 /**
  *

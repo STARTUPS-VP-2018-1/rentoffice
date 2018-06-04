@@ -8,7 +8,6 @@ package br.com.rentoffice.test;
 import br.com.rentoffice.business.LocatarioBusiness;
 import br.com.rentoffice.dominio.Endereco;
 import br.com.rentoffice.dominio.Locatario;
-import java.util.ArrayList;
 
 /**
  *
@@ -30,11 +29,6 @@ public class LocatarioBusinessTest {
         end1.setEstado("Corinthias");
         end1.setComplemento("Casa sobre a agua");
         end1.setRua("Rua Juninho da Se");
-        
-        lo.setTelefones(new ArrayList<Integer>());
-        lo.getTelefones().add(94941449);
-        lo.getTelefones().add(66666666);
-        
         
         try{
             lb.salvarLocatario(lo);

@@ -6,7 +6,6 @@
 package br.com.rentoffice.test;
 
 import br.com.rentoffice.business.LocadorBusiness;
-import br.com.rentoffice.dominio.Endereco;
 import br.com.rentoffice.dominio.Locador;
 
 /**
