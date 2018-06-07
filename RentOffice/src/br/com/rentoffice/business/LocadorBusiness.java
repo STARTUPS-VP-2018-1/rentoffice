@@ -46,8 +46,8 @@ public class LocadorBusiness implements LocadorInterface{
         boolean valido=true;
         
         if(locador!=null){
-            if((locador.getRsocaill_LD()!=null &&
-                    !locador.getRsocaill_LD().equals(""))&&
+            if((locador.getNomeLD()!=null &&
+                    !locador.getNomeLD().equals(""))&&
                     (locador.getCNPJ()!= null &&
                     !locador.getCNPJ().equals(""))&&
                     (locador.getEndereco()!=null)){

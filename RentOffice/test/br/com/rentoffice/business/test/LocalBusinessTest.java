@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.rentoffice.test;
+package br.com.rentoffice.business.test;
 
 import br.com.rentoffice.business.LocalBusiness;
 import br.com.rentoffice.dominio.Endereco;

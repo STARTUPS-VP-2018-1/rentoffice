@@ -24,13 +24,13 @@ public class Repositorio {
     
     static{        
         Locador lo = new Locador();
-        lo.setRsocaill_LD("Locador");
+        lo.setNomeLD("Locador");
         lo.setCNPJ("4196019");
         Repositorio.locadorDBFake.add(lo);
     }
     static{        
         Locatario lo = new Locatario();
-        lo.setRsocaill_LT("Locatario");
+        lo.setNomeLT("Locatario");
         lo.setCNPJ("4196019");
         Repositorio.locatarioDBFake.add(lo);
     }

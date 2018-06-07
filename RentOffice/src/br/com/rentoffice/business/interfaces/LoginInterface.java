@@ -7,6 +7,7 @@ package br.com.rentoffice.business.interfaces;
 
 import br.com.rentoffice.dominio.Locador;
 import br.com.rentoffice.dominio.Locatario;
+import br.com.rentoffice.dominio.Usuario;
 
 /**
  *
@@ -14,7 +15,9 @@ import br.com.rentoffice.dominio.Locatario;
  */
 public interface LoginInterface {
     
-    public Locador logarLocadorUsuario(String nomeUsuario, String senhaUsuario);
+   // public Locador logarLocadorUsuario(String nomeUsuario, String senhaUsuario);
     
-     public Locatario logarLocatario(String nomeUsuario, String senhaUsuario);
+   //  public Locatario logarLocatario(String nomeUsuario, String senhaUsuario);
+     
+      public Usuario validaUsuario(String nomeUsuario, String senha);
 }

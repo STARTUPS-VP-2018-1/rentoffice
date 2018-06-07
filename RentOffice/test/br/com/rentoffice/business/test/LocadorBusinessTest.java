@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.rentoffice.test;
+package br.com.rentoffice.business.test;
 
 import br.com.rentoffice.business.LocadorBusiness;
 import br.com.rentoffice.dominio.Locador;
@@ -18,7 +18,7 @@ public class LocadorBusinessTest {
         LocadorBusiness lb = new LocadorBusiness();
         
         Locador lo = new Locador();
-        lo.setRsocaill_LD("Cleber");
+        lo.setNomeLD("Cleber");
         lo.setCNPJ("4196019");
         
         try{

@@ -12,21 +12,21 @@ import java.util.Objects;
  *
  * @author internet
  */
-public class Locatario {
+public class Locatario extends Usuario {
     
 
-    private String rsocaill_LT; 
+    private String nomeLT; 
     private Endereco endereco;
     private List<Integer> telefones;
     private List<String> emails;
     private String CNPJ;   
 
-    public String getRsocaill_LT() {
-        return rsocaill_LT;
+    public String getNomeLT() {
+        return nomeLT;
     }
 
-    public void setRsocaill_LT(String rsocaill_LT) {
-        this.rsocaill_LT = rsocaill_LT;
+    public void setNomeLT(String nomeLT) {
+        this.nomeLT = nomeLT;
     }
 
     public Endereco getEndereco() {
@@ -63,12 +63,12 @@ public class Locatario {
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 19 * hash + Objects.hashCode(this.rsocaill_LT);
-        hash = 19 * hash + Objects.hashCode(this.endereco);
-        hash = 19 * hash + Objects.hashCode(this.telefones);
-        hash = 19 * hash + Objects.hashCode(this.emails);
-        hash = 19 * hash + Objects.hashCode(this.CNPJ);
+        int hash = 3;
+        hash = 17 * hash + Objects.hashCode(this.nomeLT);
+        hash = 17 * hash + Objects.hashCode(this.endereco);
+        hash = 17 * hash + Objects.hashCode(this.telefones);
+        hash = 17 * hash + Objects.hashCode(this.emails);
+        hash = 17 * hash + Objects.hashCode(this.CNPJ);
         return hash;
     }
 
@@ -84,7 +84,7 @@ public class Locatario {
             return false;
         }
         final Locatario other = (Locatario) obj;
-        if (!Objects.equals(this.rsocaill_LT, other.rsocaill_LT)) {
+        if (!Objects.equals(this.nomeLT, other.nomeLT)) {
             return false;
         }
         if (!Objects.equals(this.CNPJ, other.CNPJ)) {
@@ -102,6 +102,6 @@ public class Locatario {
         return true;
     }
 
-   
+    
     
 }

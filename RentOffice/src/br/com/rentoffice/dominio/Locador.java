@@ -12,20 +12,20 @@ import java.util.Objects;
  *
  * @author internet
  */
-public class Locador {
+public class Locador extends Usuario{
     
-    private String rsocaill_LD;
+    private String nomeLD;
     private Endereco endereco;
     private List<Integer> telefones;
     private List<String> emails;
     private String CNPJ;
 
-    public String getRsocaill_LD() {
-        return rsocaill_LD;
+    public String getNomeLD() {
+        return nomeLD;
     }
 
-    public void setRsocaill_LD(String rsocaill_LD) {
-        this.rsocaill_LD = rsocaill_LD;
+    public void setNomeLD(String nomeLD) {
+        this.nomeLD = nomeLD;
     }
 
     public Endereco getEndereco() {
@@ -62,12 +62,12 @@ public class Locador {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 59 * hash + Objects.hashCode(this.rsocaill_LD);
-        hash = 59 * hash + Objects.hashCode(this.endereco);
-        hash = 59 * hash + Objects.hashCode(this.telefones);
-        hash = 59 * hash + Objects.hashCode(this.emails);
-        hash = 59 * hash + Objects.hashCode(this.CNPJ);
+        int hash = 5;
+        hash = 29 * hash + Objects.hashCode(this.nomeLD);
+        hash = 29 * hash + Objects.hashCode(this.endereco);
+        hash = 29 * hash + Objects.hashCode(this.telefones);
+        hash = 29 * hash + Objects.hashCode(this.emails);
+        hash = 29 * hash + Objects.hashCode(this.CNPJ);
         return hash;
     }
 
@@ -83,7 +83,7 @@ public class Locador {
             return false;
         }
         final Locador other = (Locador) obj;
-        if (!Objects.equals(this.rsocaill_LD, other.rsocaill_LD)) {
+        if (!Objects.equals(this.nomeLD, other.nomeLD)) {
             return false;
         }
         if (!Objects.equals(this.CNPJ, other.CNPJ)) {
@@ -101,8 +101,7 @@ public class Locador {
         return true;
     }
 
-  
-
+    
    
    
     }

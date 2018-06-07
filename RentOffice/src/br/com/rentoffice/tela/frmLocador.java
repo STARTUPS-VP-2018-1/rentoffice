@@ -19,7 +19,7 @@ public class frmLocador extends javax.swing.JFrame {
     public frmLocador(Locador locador) {
         this.locador = locador;
         initComponents();        
-        this.jLabel1.setText("Bem-vindo:"+ this.locador.getRsocaill_LD());
+        this.jLabel1.setText("Bem-vindo:"+ this.locador.getNomeLD());
     }
     
      public frmLocador() {

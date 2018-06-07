@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.rentoffice.test;
+package br.com.rentoffice.business.test;
 
 import br.com.rentoffice.business.LocatarioBusiness;
 import br.com.rentoffice.dominio.Endereco;
@@ -19,7 +19,7 @@ public class LocatarioBusinessTest {
         LocatarioBusiness lb = new LocatarioBusiness();
         
         Locatario lo = new Locatario();
-        lo.setRsocaill_LT("Juninho ");
+        lo.setNomeLT("Juninho ");
         
         //Bem Vindo ao Mundo de Juninho
         Endereco end1 = new Endereco();

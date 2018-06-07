@@ -7,6 +7,8 @@ package br.com.rentoffice.business.test;
 
 import br.com.rentoffice.business.LoginBusiness;
 import br.com.rentoffice.business.interfaces.LoginInterface;
+import br.com.rentoffice.dominio.Usuario;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,17 +16,19 @@ import br.com.rentoffice.business.interfaces.LoginInterface;
  */
 public class LoginMock {
     
-    public static void main(String args[]){
-     String nomeUsuario = "Bruno";        
-        String senhaUsuario = "123";
+   /* public static void main(String args[]){
+
+         Usuario novoUsuario = new Usuario();
+        novoUsuario.setNomeUsuario(txtUsuario.getText());
+        novoUsuario.setSenha(txtSenha.getText());
         
         LoginInterface loginBusiness = new LoginBusiness();
         
-        if(loginBusiness.logarUsuario(nomeUsuario, senhaUsuario)){
-            System.out.println("Usuario Autenticado");
+        Usuario novoUsuario2 = loginBusiness.validaUsuario(novoUsuario.getNomeUsuario(), novoUsuario.getSenha());
+        if(novoUsuario2!=null){
+            JOptionPane.showMessageDialog(null, "Bem-vindo");
         }else{
-            System.err.println("Usuario Inexistente");
-        }
-    }   
-
+        JOptionPane.showMessageDialog(null, "User not found");
+        }    
+    }    
 }
