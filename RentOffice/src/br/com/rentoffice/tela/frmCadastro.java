@@ -278,7 +278,7 @@ public class frmCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
-           txtUsuario.setText("");
+        txtUsuario.setText("");
         txtSenha.setText("");
         txtEmail.setText("");
         txtRS.setText("");
