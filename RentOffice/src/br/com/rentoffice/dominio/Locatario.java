@@ -5,6 +5,7 @@
  */
 package br.com.rentoffice.dominio;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -17,8 +18,8 @@ public class Locatario extends Usuario {
 
     private String nomeLT; 
     private Endereco endereco;
-    private List<Integer> telefones;
-    private List<String> emails;
+    private String telefones;
+    private String emails;
     private String CNPJ;   
 
     public String getNomeLT() {
@@ -37,21 +38,26 @@ public class Locatario extends Usuario {
         this.endereco = endereco;
     }
 
-    public List<Integer> getTelefones() {
+    public String getTelefones() {
         return telefones;
     }
 
-    public void setTelefones(List<Integer> telefones) {
+    public void setTelefones(String telefones) {
         this.telefones = telefones;
     }
 
-    public List<String> getEmails() {
+    
+   
+
+    public String getEmails() {
         return emails;
     }
 
-    public void setEmails(List<String> emails) {
+    public void setEmails(String emails) {
         this.emails = emails;
     }
+
+   
 
     public String getCNPJ() {
         return CNPJ;
@@ -64,11 +70,11 @@ public class Locatario extends Usuario {
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 17 * hash + Objects.hashCode(this.nomeLT);
-        hash = 17 * hash + Objects.hashCode(this.endereco);
-        hash = 17 * hash + Objects.hashCode(this.telefones);
-        hash = 17 * hash + Objects.hashCode(this.emails);
-        hash = 17 * hash + Objects.hashCode(this.CNPJ);
+        hash = 97 * hash + Objects.hashCode(this.nomeLT);
+        hash = 97 * hash + Objects.hashCode(this.endereco);
+        hash = 97 * hash + Objects.hashCode(this.telefones);
+        hash = 97 * hash + Objects.hashCode(this.emails);
+        hash = 97 * hash + Objects.hashCode(this.CNPJ);
         return hash;
     }
 
@@ -87,6 +93,9 @@ public class Locatario extends Usuario {
         if (!Objects.equals(this.nomeLT, other.nomeLT)) {
             return false;
         }
+        if (!Objects.equals(this.emails, other.emails)) {
+            return false;
+        }
         if (!Objects.equals(this.CNPJ, other.CNPJ)) {
             return false;
         }
@@ -96,12 +105,10 @@ public class Locatario extends Usuario {
         if (!Objects.equals(this.telefones, other.telefones)) {
             return false;
         }
-        if (!Objects.equals(this.emails, other.emails)) {
-            return false;
-        }
         return true;
     }
 
+  
     
     
 }

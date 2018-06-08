@@ -35,10 +35,7 @@ public class LocadorBusiness implements LocadorInterface{
         return Repositorio.locadorDBFake;
     }
 
-    @Override
-    public List<Locador> buscarLocadorPorNome(String nome) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 
     public List<Locador> buscarTodosLocador() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -60,13 +57,19 @@ public class LocadorBusiness implements LocadorInterface{
         return valido;
     }
 
+   
     @Override
-    public Locador buscarFornecedorPorUsuario(Usuario usuario) {
-      for(Locador fornecedor: Repositorio.locadorDBFake){
-            if(fornecedor.getNomeUsuario().equals(usuario.getNomeUsuario())){
-               return fornecedor; 
+    public Locador buscarLocadorPorUsuario(Usuario usuario) {
+        for(Locador locador: Repositorio.locadorDBFake){
+            if(locador.getNomeUsuario().equals(usuario.getNomeUsuario())){
+               return locador; 
             }                      
         }
         return null;  
+    }
+
+    @Override
+    public List<Locador> buscarLocadorPorNome(String nome) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

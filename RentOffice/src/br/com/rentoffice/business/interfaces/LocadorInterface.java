@@ -21,5 +21,5 @@ public interface LocadorInterface {
     
     public List<Locador> buscarTodosLocadores();
     
-     public Locador buscarFornecedorPorUsuario(Usuario usuario);
+     public Locador buscarLocadorPorUsuario(Usuario usuario);
 }

@@ -16,8 +16,8 @@ public class Locador extends Usuario{
     
     private String nomeLD;
     private Endereco endereco;
-    private List<Integer> telefones;
-    private List<String> emails;
+    private String telefones;
+    private String emails;
     private String CNPJ;
 
     public String getNomeLD() {
@@ -36,21 +36,25 @@ public class Locador extends Usuario{
         this.endereco = endereco;
     }
 
-    public List<Integer> getTelefones() {
+    public String getTelefones() {
         return telefones;
     }
 
-    public void setTelefones(List<Integer> telefones) {
+    public void setTelefones(String telefones) {
         this.telefones = telefones;
     }
 
-    public List<String> getEmails() {
+    
+
+    public String getEmails() {
         return emails;
     }
 
-    public void setEmails(List<String> emails) {
+    public void setEmails(String emails) {
         this.emails = emails;
     }
+
+   
 
     public String getCNPJ() {
         return CNPJ;
@@ -62,12 +66,12 @@ public class Locador extends Usuario{
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 29 * hash + Objects.hashCode(this.nomeLD);
-        hash = 29 * hash + Objects.hashCode(this.endereco);
-        hash = 29 * hash + Objects.hashCode(this.telefones);
-        hash = 29 * hash + Objects.hashCode(this.emails);
-        hash = 29 * hash + Objects.hashCode(this.CNPJ);
+        int hash = 7;
+        hash = 97 * hash + Objects.hashCode(this.nomeLD);
+        hash = 97 * hash + Objects.hashCode(this.endereco);
+        hash = 97 * hash + Objects.hashCode(this.telefones);
+        hash = 97 * hash + Objects.hashCode(this.emails);
+        hash = 97 * hash + Objects.hashCode(this.CNPJ);
         return hash;
     }
 
@@ -86,6 +90,9 @@ public class Locador extends Usuario{
         if (!Objects.equals(this.nomeLD, other.nomeLD)) {
             return false;
         }
+        if (!Objects.equals(this.emails, other.emails)) {
+            return false;
+        }
         if (!Objects.equals(this.CNPJ, other.CNPJ)) {
             return false;
         }
@@ -95,13 +102,11 @@ public class Locador extends Usuario{
         if (!Objects.equals(this.telefones, other.telefones)) {
             return false;
         }
-        if (!Objects.equals(this.emails, other.emails)) {
-            return false;
-        }
         return true;
     }
 
     
+
    
    
     }

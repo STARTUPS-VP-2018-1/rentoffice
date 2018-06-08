@@ -167,7 +167,7 @@ public class frmLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-        // TODO add your handling code here:
+        //this.dispose();
         frmCadastro frm = new frmCadastro ();
         frm.setVisible(true);
     }//GEN-LAST:event_btnCadastrarActionPerformed
@@ -192,7 +192,7 @@ public class frmLogin extends javax.swing.JFrame {
                clienteFrame.setVisible(true);               
                 dispose();
             }
-            if(locadorBusiness.buscarFornecedorPorUsuario(novoUsuario)!=null){
+            if(locadorBusiness.buscarLocadorPorUsuario(novoUsuario)!=null){
                 frmLocador locadorFrame = new frmLocador();
                 locadorFrame.setVisible(true);
             }   dispose();
