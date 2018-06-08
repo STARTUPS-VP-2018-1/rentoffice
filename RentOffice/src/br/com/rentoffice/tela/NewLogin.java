@@ -5,6 +5,17 @@
  */
 package br.com.rentoffice.tela;
 
+import br.com.rentoffice.business.LocadorBusiness;
+import br.com.rentoffice.business.LocatarioBusiness;
+import br.com.rentoffice.business.LoginBusiness;
+import br.com.rentoffice.business.interfaces.LocadorInterface;
+import br.com.rentoffice.business.interfaces.LocatarioInterface;
+import br.com.rentoffice.business.interfaces.LoginInterface;
+import br.com.rentoffice.dominio.Locatario;
+import br.com.rentoffice.dominio.Usuario;
+import java.awt.Color;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author bruno
@@ -16,6 +27,8 @@ public class NewLogin extends javax.swing.JFrame {
      */
     public NewLogin() {
         initComponents();
+        jTextField1.setBackground(new Color(0,0,0,0));
+        jPasswordField1.setBackground(new Color(0,0,0,0));    
     }
 
     /**
@@ -35,6 +48,8 @@ public class NewLogin extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         btnLogin = new java.awt.Button();
         btnLogin1 = new java.awt.Button();
+        jTextField1 = new javax.swing.JTextField();
+        jPasswordField1 = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -76,6 +91,21 @@ public class NewLogin extends javax.swing.JFrame {
             }
         });
 
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField1.setBorder(null);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        jPasswordField1.setBorder(null);
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -84,25 +114,34 @@ public class NewLogin extends javax.swing.JFrame {
                 .addGap(102, 102, 102)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel1)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btnLogin1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jSeparator2)
-                    .addComponent(jSeparator1))
+                    .addComponent(jSeparator1)
+                    .addComponent(jTextField1)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)
+                            .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(52, 52, 52))
+                    .addComponent(jLabel1))
                 .addContainerGap(123, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(222, Short.MAX_VALUE)
+                .addContainerGap(240, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addGap(29, 29, 29)
+                .addGap(3, 3, 3)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addGap(28, 28, 28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -114,7 +153,7 @@ public class NewLogin extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel3.setText("LOGO AQUI");
+        jLabel3.setText("Rent Office - logo");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -150,12 +189,47 @@ public class NewLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLogin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogin1ActionPerformed
-        // TODO add your handling code here:
+         frmCadastro frm = new frmCadastro ();
+        frm.setVisible(true);
     }//GEN-LAST:event_btnLogin1ActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        // TODO add your handling code here:
+       
+        Usuario novoUsuario = new Usuario();
+        novoUsuario.setNomeUsuario(jTextField1.getText());
+        novoUsuario.setSenha(jPasswordField1.getText());
+        
+        LoginInterface loginBusiness = new LoginBusiness();
+         
+        LocatarioInterface clienteBusiness = new LocatarioBusiness();
+        LocadorInterface locadorBusiness = new LocadorBusiness();
+        
+        
+        if(loginBusiness.validaUsuario(novoUsuario)){
+            Locatario clienteEncontrado = clienteBusiness.
+                    buscarClientePorUsuario(novoUsuario);            
+            if(clienteEncontrado!=null){
+               frmCategoria clienteFrame = new frmCategoria(clienteEncontrado);
+               clienteFrame.setVisible(true);               
+                dispose();
+            }
+            if(locadorBusiness.buscarLocadorPorUsuario(novoUsuario)!=null){
+                frmLocador locadorFrame = new frmLocador();
+                locadorFrame.setVisible(true);
+            }   dispose();
+        }else{
+            JOptionPane.showMessageDialog(null, "Usuario não encontrado!");
+        }       
+           
     }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -200,7 +274,9 @@ public class NewLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
