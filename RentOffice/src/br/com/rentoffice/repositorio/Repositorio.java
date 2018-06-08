@@ -24,16 +24,20 @@ public class Repositorio {
     
     static{        
         Locador lo = new Locador();
-        lo.setNomeLD("Locador");
+        lo.setNomeUsuario("Locador");
+        lo.setSenha("123");
         lo.setCNPJ("4196019");
         Repositorio.locadorDBFake.add(lo);
     }
     static{        
         Locatario lo = new Locatario();
-        lo.setNomeLT("Locatario");
+        lo.setNomeUsuario("Locatario");
+        lo.setSenha("123");
         lo.setCNPJ("4196019");
         Repositorio.locatarioDBFake.add(lo);
     }
+    
+
     
     
 }

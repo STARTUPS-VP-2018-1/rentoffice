@@ -18,61 +18,60 @@ import br.com.rentoffice.repositorio.Repositorio;
  */
 public class LoginBusiness implements LoginInterface{
 
-    public Locador logarLocadorUsuario(String nomeUsuario, String senhaUsuario) {
-       Locador locadorRetorno=null;
-        
-        for(Locador locador: Repositorio.locadorDBFake){
-            if(locador.getNomeLD().equals(nomeUsuario)){
-               locadorRetorno = locador; 
-            }
-        }     
-          return  locadorRetorno; 
-
-    }
-
-    public Locatario logarLocatario(String nomeUsuario, String senhaUsuario) {
-         Locatario locatarioRetorno=null;
-        
-        for(Locatario locatario: Repositorio.locatarioDBFake){
-            if(locatario.getNomeLT().equals(nomeUsuario)){
-               locatarioRetorno = locatario; 
-            }
-        }     
-          return  locatarioRetorno; 
-    }
-
-    public Locatario logarUsuario(String nomeUsuario, String senhaUsuario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
+     
     public Usuario validaUsuario(String nomeUsuario, String senha) {
         Usuario usuario = null;
         
-        for(Locatario locador: Repositorio.locatarioDBFake){
+        for(Locatario locatario: Repositorio.locatarioDBFake){
+            if(locatario.getNomeUsuario().
+                    equals(nomeUsuario) &&
+               locatario.getSenha().equals(senha)){
+                usuario = new Usuario();
+                usuario.setNomeUsuario(nomeUsuario);
+                usuario.setSenha(senha);
+                usuario.setLocador(false);
+                        
+            }   
+        }        
+        for(Locador locador:Repositorio.locadorDBFake){
             if(locador.getNomeUsuario().
-                    equals(nomeUsuario)&&
-                 locador.getSenha().equals(senha)){
-                   usuario = new Usuario();   
-                   usuario.setNomeUsuario(nomeUsuario);
-                   usuario.setSenha(senha);
-                   usuario.setLocador(false);
-                }
+                    equals(nomeUsuario) &&
+                locador.getSenha().equals(senha)){
+                
+                usuario = new Usuario();
+                usuario.setNomeUsuario(nomeUsuario);
+                usuario.setSenha(senha);
+                usuario.setLocador(true);                
             }
-            for(Locador fornecedor:Repositorio.locadorDBFake){
-                if(fornecedor.getNomeUsuario().
-                        equals(nomeUsuario)&&
-                  fornecedor.getSenha().equals(senha)){
-                   usuario = new Usuario();   
-                   usuario.setNomeUsuario(nomeUsuario);
-                   usuario.setSenha(senha);
-                   usuario.setLocador(true);
-                }
-            }
-            return null;
+        }        
+        return usuario;
     }
 
-  }
+    @Override
+    public boolean validaUsuario(Usuario usuario) {
+       
+        
+        for(Locatario locatario: Repositorio.locatarioDBFake){
+            if(locatario.getNomeUsuario().
+                    equals(usuario.getNomeUsuario()) &&
+               locatario.getSenha().equals(locatario.getSenha())){
+                return true;
+            }   
+        }
+        
+        for(Locador locador:Repositorio.locadorDBFake){
+            if(locador.getNomeUsuario().
+                    equals(usuario.getNomeUsuario()) &&
+                locador.getSenha().equals(usuario.getSenha())){
+                return true;
+            }
+        }        
+        return false;
+    }
+
+    }
+    
+
     
          
     

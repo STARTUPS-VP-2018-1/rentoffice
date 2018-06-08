@@ -8,6 +8,7 @@ package br.com.rentoffice.business;
 import br.com.rentoffice.dominio.Locador;
 import java.util.List;
 import br.com.rentoffice.business.interfaces.LocadorInterface;
+import br.com.rentoffice.dominio.Usuario;
 import br.com.rentoffice.repositorio.Repositorio;
 
 public class LocadorBusiness implements LocadorInterface{
@@ -57,5 +58,15 @@ public class LocadorBusiness implements LocadorInterface{
         }
         
         return valido;
+    }
+
+    @Override
+    public Locador buscarFornecedorPorUsuario(Usuario usuario) {
+      for(Locador fornecedor: Repositorio.locadorDBFake){
+            if(fornecedor.getNomeUsuario().equals(usuario.getNomeUsuario())){
+               return fornecedor; 
+            }                      
+        }
+        return null;  
     }
 }

@@ -16,19 +16,19 @@ import javax.swing.JOptionPane;
  */
 public class LoginMock {
     
-   /* public static void main(String args[]){
+    public static void main(String args[]){
 
-         Usuario novoUsuario = new Usuario();
-        novoUsuario.setNomeUsuario(txtUsuario.getText());
-        novoUsuario.setSenha(txtSenha.getText());
+        // Usuario novoUsuario = new Usuario();
+        //novoUsuario.setNomeUsuario(txtUsuario.getText());
+       // novoUsuario.setSenha(txtSenha.getText());
         
-        LoginInterface loginBusiness = new LoginBusiness();
+       // /LoginInterface loginBusiness = new LoginBusiness();
         
-        Usuario novoUsuario2 = loginBusiness.validaUsuario(novoUsuario.getNomeUsuario(), novoUsuario.getSenha());
-        if(novoUsuario2!=null){
-            JOptionPane.showMessageDialog(null, "Bem-vindo");
-        }else{
-        JOptionPane.showMessageDialog(null, "User not found");
-        }    
+        //Usuario novoUsuario2 = loginBusiness.validaUsuario(novoUsuario.getNomeUsuario(), novoUsuario.getSenha());
+        //if(novoUsuario2!=null){
+          //  JOptionPane.showMessageDialog(null, "Bem-vindo");
+        //}else{
+        //JOptionPane.showMessageDialog(null, "User not found");
+        //}    
     }    
 }

@@ -5,6 +5,10 @@
  */
 package br.com.rentoffice.tela;
 
+import br.com.rentoffice.dominio.Locador;
+import br.com.rentoffice.dominio.Locatario;
+import br.com.rentoffice.repositorio.Repositorio;
+
 /**
  *
  * @author laboratorio
@@ -20,6 +24,7 @@ public class frmCadastro extends javax.swing.JFrame {
         txtSenhaOld.setVisible(false);
         txtSenhaOld2.setVisible(false);
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -132,9 +137,6 @@ public class frmCadastro extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(57, 57, 57)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -158,8 +160,11 @@ public class frmCadastro extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnCadastrar)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnCadastrar1)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(btnCadastrar1))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(jLabel1)))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,7 +211,39 @@ public class frmCadastro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-      
+     Locatario novoLocatario = new Locatario();
+        novoLocatario.setNomeUsuario(txtUsuario.getText());
+        
+     Locador novoLocador = new Locador();
+       novoLocador.setNomeUsuario(txtUsuario.getText());   
+        
+   
+        
+        if(jComboBox1.getSelectedItem().equals("Locatário")){
+            
+        Repositorio.locatarioDBFake.add(novoLocatario);
+        txtUsuario.setText("");
+            
+        }
+          
+        if(jComboBox1.getSelectedItem().equals("Locador")){
+            
+        Repositorio.locadorDBFake.add(novoLocador);
+        txtUsuario.setText("");
+            
+        }
+
+         
+        
+       
+        
+        
+        //int count = 1;
+        //for(Locatario cliente: Repositorio.locatarioDBFake){
+        //    System.out.println("Cliente "+count+" - "+cliente.getNomeUsuario());
+        //    count++;
+        //}
+        
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void txtSenhaOldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaOldActionPerformed

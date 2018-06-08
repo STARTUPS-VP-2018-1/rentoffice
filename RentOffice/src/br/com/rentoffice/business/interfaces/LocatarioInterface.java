@@ -6,6 +6,7 @@
 package br.com.rentoffice.business.interfaces;
 
 import br.com.rentoffice.dominio.Locatario;
+import br.com.rentoffice.dominio.Usuario;
 
 /**
  *
@@ -14,5 +15,7 @@ import br.com.rentoffice.dominio.Locatario;
 public interface LocatarioInterface {
        
     public Locatario salvarLocatario(Locatario cliente);
+    
+    public Locatario buscarClientePorUsuario(Usuario usuario);
     
 }
