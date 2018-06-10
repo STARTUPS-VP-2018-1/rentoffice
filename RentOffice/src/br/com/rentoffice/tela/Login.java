@@ -27,9 +27,9 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
-        jTextField1.setBackground(new Color(0,0,0,0));
-        jPasswordField1.setBackground(new Color(0,0,0,0));   
- 
+        jTextField1.setBackground(new Color(0, 0, 0, 0));
+        jPasswordField1.setBackground(new Color(0, 0, 0, 0));
+
     }
 
     /**
@@ -229,7 +229,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void btnLogin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogin1ActionPerformed
-        frmCadastro frm = new frmCadastro ();
+        frmCadastro frm = new frmCadastro();
         frm.setVisible(true);
     }//GEN-LAST:event_btnLogin1ActionPerformed
 
@@ -244,19 +244,20 @@ public class Login extends javax.swing.JFrame {
         LocatarioInterface clienteBusiness = new LocatarioBusiness();
         LocadorInterface locadorBusiness = new LocadorBusiness();
 
-        if(loginBusiness.validaUsuario(novoUsuario)){
+        if (loginBusiness.validaUsuario(novoUsuario)) {
             Locatario clienteEncontrado = clienteBusiness.
-            buscarClientePorUsuario(novoUsuario);
-            if(clienteEncontrado!=null){
-                frmCategoria clienteFrame = new frmCategoria(clienteEncontrado);
+                    buscarClientePorUsuario(novoUsuario);
+            if (clienteEncontrado != null) {
+                frmLocatario clienteFrame = new frmLocatario(clienteEncontrado);
                 clienteFrame.setVisible(true);
                 dispose();
             }
-            if(locadorBusiness.buscarLocadorPorUsuario(novoUsuario)!=null){
+            if (locadorBusiness.buscarLocadorPorUsuario(novoUsuario) != null) {
                 frmLocador locadorFrame = new frmLocador();
                 locadorFrame.setVisible(true);
-            }   dispose();
-        }else{
+            }
+            dispose();
+        } else {
             JOptionPane.showMessageDialog(null, "Usuario não encontrado!");
         }
 

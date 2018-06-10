@@ -11,7 +11,7 @@ import br.com.rentoffice.business.interfaces.LocadorInterface;
 import br.com.rentoffice.dominio.Usuario;
 import br.com.rentoffice.repositorio.Repositorio;
 
-public class LocadorBusiness implements LocadorInterface{
+public class LocadorBusiness implements LocadorInterface {
 
     @Override
     public Locador salvarLocador(Locador fornecedor) {

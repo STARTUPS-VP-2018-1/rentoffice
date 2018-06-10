@@ -12,8 +12,7 @@ import br.com.rentoffice.dominio.Usuario;
  * @author internet
  */
 public interface LoginInterface {
-     
-     // public Usuario validaUsuario(String nomeUsuario, String senha);
-      
-       public boolean validaUsuario(Usuario usuario);
+
+    // public Usuario validaUsuario(String nomeUsuario, String senha);
+    public boolean validaUsuario(Usuario usuario);
 }

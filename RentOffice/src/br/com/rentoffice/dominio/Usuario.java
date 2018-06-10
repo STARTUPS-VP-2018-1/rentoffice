@@ -12,9 +12,10 @@ import java.util.Objects;
  * @author internet
  */
 public class Usuario {
+
     private String nomeUsuario;
     private String senha;
-    private boolean locador;    
+    private boolean locador;
 
     public String getNomeUsuario() {
         return nomeUsuario;
@@ -73,7 +74,4 @@ public class Usuario {
         return true;
     }
 
-    
-    
-    
 }

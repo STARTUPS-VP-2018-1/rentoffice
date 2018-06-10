@@ -257,6 +257,9 @@
       </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="txtRS">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="frmCadastro_txtRS"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCNPJ">
       <AuxValues>

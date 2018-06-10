@@ -21,9 +21,8 @@ public class frmCadastro extends javax.swing.JFrame {
      */
     public frmCadastro() {
         initComponents();
-        
+
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -218,62 +217,55 @@ public class frmCadastro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-     Locatario novoLocatario = new Locatario();
+        Locatario novoLocatario = new Locatario();
         novoLocatario.setNomeUsuario(txtUsuario.getText());
         novoLocatario.setSenha(txtSenha.getText());
         novoLocatario.setEmails(txtEmail.getText());
         novoLocatario.setNomeLT(txtRS.getText());
         novoLocatario.setTelefones(txtTelefone.getText());
         novoLocatario.setCNPJ(txtCNPJ.getText());
-    
-      Locador novoLocador = new Locador();
-       novoLocador.setNomeUsuario(txtUsuario.getText());
-       novoLocador.setSenha(txtSenha.getText());
-       novoLocador.setEmails(txtEmail.getText());
-       novoLocador.setNomeLD(txtRS.getText());
-       novoLocador.setTelefones(txtTelefone.getText());
-       novoLocador.setCNPJ(txtCNPJ.getText());
-   
-        
-        if(jComboBox1.getSelectedItem().equals("Locatário")){
-            
-        Repositorio.locatarioDBFake.add(novoLocatario);
-        txtUsuario.setText("");
-        txtSenha.setText("");
-        txtEmail.setText("");
-        txtRS.setText("");
-        txtCNPJ.setText("");
-        txtTelefone.setText("");
-        }
-          
-        if(jComboBox1.getSelectedItem().equals("Locador")){
-            
-        Repositorio.locadorDBFake.add(novoLocador);
-        txtUsuario.setText("");
-        txtSenha.setText("");
-        txtEmail.setText("");
-        txtRS.setText("");
-        txtCNPJ.setText("");
-        txtTelefone.setText("");
-            
-        }
-        JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso");
 
-         
-        
-       
-        
-        
-        //int count = 1;
-        //for(Locatario cliente: Repositorio.locatarioDBFake){
-        //    System.out.println("Cliente "+count+" - "+cliente.getNomeUsuario());
-        //    count++;
-        //}
-        
+        Locador novoLocador = new Locador();
+        novoLocador.setNomeUsuario(txtUsuario.getText());
+        novoLocador.setSenha(txtSenha.getText());
+        novoLocador.setEmails(txtEmail.getText());
+        novoLocador.setNomeLD(txtRS.getText());
+        novoLocador.setTelefones(txtTelefone.getText());
+        novoLocador.setCNPJ(txtCNPJ.getText());
+
+        if ((txtUsuario.getText() == null || txtSenha.getText().trim().isEmpty())
+                || (txtEmail.getText() == null || txtRS.getText().trim().isEmpty())
+                || (txtTelefone.getText() == null || txtCNPJ.getText().trim().isEmpty())) {
+            JOptionPane.showMessageDialog(null, "Todos os campos devem estar preenchidos !");
+        } else {
+            if (jComboBox1.getSelectedItem().equals("Locatário")) {
+
+                Repositorio.locatarioDBFake.add(novoLocatario);
+                txtUsuario.setText("");
+                txtSenha.setText("");
+                txtEmail.setText("");
+                txtRS.setText("");
+                txtCNPJ.setText("");
+                txtTelefone.setText("");
+            }
+
+            if (jComboBox1.getSelectedItem().equals("Locador")) {
+
+                Repositorio.locadorDBFake.add(novoLocador);
+                txtUsuario.setText("");
+                txtSenha.setText("");
+                txtEmail.setText("");
+                txtRS.setText("");
+                txtCNPJ.setText("");
+                txtTelefone.setText("");
+
+            }
+            JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso");
+        }
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-                // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
@@ -290,7 +282,7 @@ public class frmCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_txtSenhaActionPerformed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
-         frmCadastro.this.dispose();
+        frmCadastro.this.dispose();
     }//GEN-LAST:event_formWindowClosed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing

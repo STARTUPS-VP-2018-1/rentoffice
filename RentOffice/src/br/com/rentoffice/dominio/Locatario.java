@@ -12,7 +12,6 @@ import java.util.Objects;
  * @author internet
  */
 public class Locatario extends Usuario {
-    
 
     private String nomeLT; 
     private Endereco endereco;

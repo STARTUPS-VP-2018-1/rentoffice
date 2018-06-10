@@ -166,27 +166,23 @@ public class frmEscritorios extends javax.swing.JFrame {
         // TODO add your handling code here:
         //desc_01.setText("<html>  </html>");
         // desc_02.setText("<html> </html>");
-        
+
     }//GEN-LAST:event_formWindowOpened
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-         frmConfirmaCompra frm = new frmConfirmaCompra();
-        frm.setVisible(true);
+
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-          frmConfirmaCompra frm = new frmConfirmaCompra();
-        frm.setVisible(true);
+
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-           frmConfirmaCompra frm = new frmConfirmaCompra();
-        frm.setVisible(true);
+
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-           frmConfirmaCompra frm = new frmConfirmaCompra();
-        frm.setVisible(true);
+
     }//GEN-LAST:event_jLabel8MouseClicked
 
     /**

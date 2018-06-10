@@ -10,8 +10,7 @@ import br.com.rentoffice.business.interfaces.LocatarioInterface;
 import br.com.rentoffice.dominio.Usuario;
 import br.com.rentoffice.repositorio.Repositorio;
 
-
-public class LocatarioBusiness implements LocatarioInterface{
+public class LocatarioBusiness implements LocatarioInterface {
 
     @Override
     public Locatario salvarLocatario(Locatario cliente) {
@@ -20,15 +19,11 @@ public class LocatarioBusiness implements LocatarioInterface{
 
     @Override
     public Locatario buscarClientePorUsuario(Usuario usuario) {
-        for(Locatario cliente: Repositorio.locatarioDBFake){
-            if(cliente.getNomeUsuario().equals(usuario.getNomeUsuario())){
+        for (Locatario cliente : Repositorio.locatarioDBFake) {
+            if (cliente.getNomeUsuario().equals(usuario.getNomeUsuario())) {
                 return cliente;
             }
-        }       
+        }
         return null;
     }
-    }
-       
-   
-
-    
+}

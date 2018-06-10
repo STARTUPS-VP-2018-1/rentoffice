@@ -11,8 +11,8 @@ import java.util.Objects;
  *
  * @author internet
  */
-public class Locador extends Usuario{
-    
+public class Locador extends Usuario {
+
     private String nomeLD;
     private Endereco endereco;
     private String telefones;
@@ -43,8 +43,6 @@ public class Locador extends Usuario{
         this.telefones = telefones;
     }
 
-    
-
     public String getEmails() {
         return emails;
     }
@@ -52,8 +50,6 @@ public class Locador extends Usuario{
     public void setEmails(String emails) {
         this.emails = emails;
     }
-
-   
 
     public String getCNPJ() {
         return CNPJ;
@@ -103,11 +99,4 @@ public class Locador extends Usuario{
         }
         return true;
     }
-
-    
-
-   
-   
-    }
-
- 
+}

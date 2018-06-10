@@ -5,11 +5,13 @@
  */
 package br.com.rentoffice.tela;
 
+import br.com.rentoffice.dominio.EscritorioB;
+import br.com.rentoffice.dominio.EscritorioD;
+import br.com.rentoffice.dominio.EscritorioP;
 import br.com.rentoffice.dominio.Locador;
-import br.com.rentoffice.dominio.Escritorio;
+
 import br.com.rentoffice.repositorio.Repositorio;
 import javax.swing.JOptionPane;
-
 
 /**
  *
@@ -22,12 +24,13 @@ public class frmLocador extends javax.swing.JFrame {
      */
     public frmLocador() {
         initComponents();
-    }  
+    }
+
     public frmLocador(Locador locador) {
         initComponents();
-        jLabel5.setText("Bem vindo cliente: "+locador.getNomeUsuario()); 
+        jLabel5.setText("Bem vindo: " + locador.getNomeUsuario());
     }
-        
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -66,7 +69,7 @@ public class frmLocador extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel2.setText("Local do escritorio:");
+        jLabel2.setText("Nome do escritorio:");
 
         jLabel3.setText("Categoria:");
 
@@ -112,7 +115,7 @@ public class frmLocador extends javax.swing.JFrame {
             }
         });
 
-        txtCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Econômico", "Econômico Plus", "Executivo" }));
+        txtCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Básico", "Padrão", "Plus" }));
         txtCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCategoriaActionPerformed(evt);
@@ -121,6 +124,7 @@ public class frmLocador extends javax.swing.JFrame {
 
         TableConsultar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null},
                 {null, null, null},
                 {null, null, null},
                 {null, null, null}
@@ -174,7 +178,7 @@ public class frmLocador extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(36, 36, 36)
-                .addComponent(jLabel5)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addContainerGap())
@@ -225,7 +229,7 @@ public class frmLocador extends javax.swing.JFrame {
     }//GEN-LAST:event_txtLocalEsActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
-         
+
     }//GEN-LAST:event_btnConsultarActionPerformed
 
     private void txtCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCategoriaActionPerformed
@@ -233,37 +237,49 @@ public class frmLocador extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCategoriaActionPerformed
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-        Escritorio novoLocal = new Escritorio();
-        novoLocal.setNomeLocal(txtLocalEs.getText());
-        novoLocal.setDiaria(txtDiaria.getText());
+        EscritorioB novoLocalB = new EscritorioB();
+        novoLocalB.setNomeEscritorioB(txtLocalEs.getText());
+        novoLocalB.setDiariaEscritorioB(txtDiaria.getText());
 
-        if(txtCategoria.getSelectedItem().equals("Econômico")){
-            
-        Repositorio.escritorioEcoDBFake.add(novoLocal);
-        txtLocalEs.setText("");
-        txtDiaria.setText("");
-        }
-          
-        if(txtCategoria.getSelectedItem().equals("Econômico Plus")){
-            
-        Repositorio.escritorioEcoPDBFake.add(novoLocal);
-        txtLocalEs.setText("");
-        txtDiaria.setText("");
-        }
-        
-        if(txtCategoria.getSelectedItem().equals("Executivo")){
-            
-        Repositorio.escritorioExeDBFake.add(novoLocal);
-        txtLocalEs.setText("");
-        txtDiaria.setText("");
-        }
-        JOptionPane.showMessageDialog(null, "Escritório cadastrado com sucesso");
+        EscritorioD novoLocalD = new EscritorioD();
+        novoLocalD.setNomeEscritorioD(txtLocalEs.getText());
+        novoLocalD.setDiariaEscritorioD(txtDiaria.getText());
 
+        EscritorioP novoLocalP = new EscritorioP();
+        novoLocalP.setNomeEscritorioP(txtLocalEs.getText());
+        novoLocalP.setDiariaEscritorioP(txtDiaria.getText());
+
+        if ((txtLocalEs.getText() == null || txtDiaria.getText().trim().isEmpty())) {
+            JOptionPane.showMessageDialog(null, "Todos os campos devem estar preenchidos !");
+        } else {
+
+            if (txtCategoria.getSelectedItem().equals("Básico")) {
+
+                Repositorio.escritorioBDFake.add(novoLocalB);
+                txtLocalEs.setText("");
+                txtDiaria.setText("");
+            }
+
+            if (txtCategoria.getSelectedItem().equals("Padrão")) {
+
+                Repositorio.escritorioDFake.add(novoLocalD);
+                txtLocalEs.setText("");
+                txtDiaria.setText("");
+            }
+
+            if (txtCategoria.getSelectedItem().equals("Plus")) {
+
+                Repositorio.escritorioPDFake.add(novoLocalP);
+                txtLocalEs.setText("");
+                txtDiaria.setText("");
+            }
+            JOptionPane.showMessageDialog(null, "Escritório cadastrado com sucesso");
+        }
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Login frm = new Login ();
-        frm.setVisible(true); 
+        Login frm = new Login();
+        frm.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -284,14 +300,18 @@ public class frmLocador extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmLocador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Locador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmLocador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Locador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmLocador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Locador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmLocador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Locador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -322,6 +342,6 @@ public class frmLocador extends javax.swing.JFrame {
     private javax.swing.JTextField txtDiaria;
     private javax.swing.JTextField txtLocalEs;
     // End of variables declaration//GEN-END:variables
-    Locador locador;
+    frmLocador locador;
 
 }

@@ -12,7 +12,7 @@ import java.util.Objects;
  * @author internet
  */
 public class Endereco {
-    
+
     private String rua;
     private Integer numero;
     private String complemento;
@@ -126,8 +126,4 @@ public class Endereco {
         return true;
     }
 
-   
-    
-    
-    
 }

@@ -11,7 +11,6 @@ import java.util.List;
 
 /**
  *
- * @author internet
  */
 public interface LocadorInterface {
     

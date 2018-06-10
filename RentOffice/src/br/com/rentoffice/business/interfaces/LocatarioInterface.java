@@ -13,9 +13,9 @@ import br.com.rentoffice.dominio.Usuario;
  * @author internet
  */
 public interface LocatarioInterface {
-       
+
     public Locatario salvarLocatario(Locatario cliente);
-    
+
     public Locatario buscarClientePorUsuario(Usuario usuario);
-    
+
 }
