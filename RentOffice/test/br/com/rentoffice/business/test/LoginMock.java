@@ -5,8 +5,13 @@
  */
 package br.com.rentoffice.business.test;
 
+import br.com.rentoffice.business.LocadorBusiness;
+import br.com.rentoffice.business.LocatarioBusiness;
 import br.com.rentoffice.business.LoginBusiness;
+import br.com.rentoffice.business.interfaces.LocadorInterface;
+import br.com.rentoffice.business.interfaces.LocatarioInterface;
 import br.com.rentoffice.business.interfaces.LoginInterface;
+import br.com.rentoffice.dominio.Locatario;
 import br.com.rentoffice.dominio.Usuario;
 import javax.swing.JOptionPane;
 
@@ -18,17 +23,25 @@ public class LoginMock {
     
     public static void main(String args[]){
 
-        // Usuario novoUsuario = new Usuario();
-        //novoUsuario.setNomeUsuario(txtUsuario.getText());
-       // novoUsuario.setSenha(txtSenha.getText());
+ Usuario novoUsuario = new Usuario();
+        novoUsuario.setNomeUsuario("nome");
+        novoUsuario.setSenha("senha");
         
-       // /LoginInterface loginBusiness = new LoginBusiness();
+        LoginInterface loginBusiness = new LoginBusiness();
+         
+        LocatarioInterface clienteBusiness = new LocatarioBusiness();
+        LocadorInterface locadorBusiness = new LocadorBusiness();
         
-        //Usuario novoUsuario2 = loginBusiness.validaUsuario(novoUsuario.getNomeUsuario(), novoUsuario.getSenha());
-        //if(novoUsuario2!=null){
-          //  JOptionPane.showMessageDialog(null, "Bem-vindo");
-        //}else{
-        //JOptionPane.showMessageDialog(null, "User not found");
-        //}    
-    }    
+        
+        if(loginBusiness.validaUsuario(novoUsuario)){
+            Locatario clienteEncontrado = clienteBusiness.
+                    buscarClientePorUsuario(novoUsuario);            
+            if(clienteEncontrado!=null){
+            }
+            if(locadorBusiness.buscarLocadorPorUsuario(novoUsuario)!=null){
+        }else{
+            JOptionPane.showMessageDialog(null, "Usuario não encontrado!");
+        }       
+        }        
+    }
 }

@@ -7,7 +7,7 @@ package br.com.rentoffice.repositorio;
 
 import br.com.rentoffice.dominio.Locatario;
 import br.com.rentoffice.dominio.Locador;
-import br.com.rentoffice.dominio.Local;
+import br.com.rentoffice.dominio.Escritorio;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +17,9 @@ import java.util.List;
  */
 public class Repositorio {
     
-    public static List<Local> localDBFake = new ArrayList<Local>();
+    public static List<Escritorio> escritorioEcoDBFake = new ArrayList<Escritorio>();
+    public static List<Escritorio> escritorioEcoPDBFake = new ArrayList<Escritorio>();
+    public static List<Escritorio> escritorioExeDBFake = new ArrayList<Escritorio>();
     public static List<Locatario> locatarioDBFake = new ArrayList<Locatario>();
     public static List<Locador> locadorDBFake = new ArrayList<Locador>();
     
@@ -36,8 +38,14 @@ public class Repositorio {
         lo.setCNPJ("4196019");
         Repositorio.locatarioDBFake.add(lo);
     }
+        static{        
+        Escritorio lo = new Escritorio();
+        lo.setNomeLocal("Escritorio TEST");
+        lo.setProprietario("Bruno");
+        lo.setDiaria("R$14,44");
+        Repositorio.escritorioEcoDBFake.add(lo);
+    }
     
-
-    
+  
     
 }

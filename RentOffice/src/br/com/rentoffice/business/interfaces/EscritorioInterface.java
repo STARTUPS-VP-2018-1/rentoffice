@@ -4,15 +4,15 @@
  * and open the template in the editor.
  */
 package br.com.rentoffice.business.interfaces;
-import br.com.rentoffice.dominio.Local;
+import br.com.rentoffice.dominio.Escritorio;
 import java.util.List;
 
-public interface LocalInterface {
+public interface EscritorioInterface {
     
-    public Local salvarLocal(Local produto);
+    public Escritorio salvarLocal(Escritorio produto);
     
-    public List<Local> buscarLocalPorNome(String nome);
+    public List<Escritorio> buscarLocalPorNome(String nome);
     
-    public List<Local> buscarTodosLocais();
+    public List<Escritorio> buscarTodosLocais();
     
 }

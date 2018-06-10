@@ -11,11 +11,11 @@ import java.util.Objects;
  *
  * @author internet
  */
-public class Local {
+public class Escritorio {
     
     private String nomeLocal;
     private String proprietario;
-    private String contrato;
+    private String diaria;
 
     public String getNomeLocal() {
         return nomeLocal;
@@ -33,20 +33,20 @@ public class Local {
         this.proprietario = proprietario;
     }
 
-    public String getContrato() {
-        return contrato;
+    public String getDiaria() {
+        return diaria;
     }
 
-    public void setContrato(String contrato) {
-        this.contrato = contrato;
+    public void setDiaria(String diaria) {
+        this.diaria = diaria;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 89 * hash + Objects.hashCode(this.nomeLocal);
-        hash = 89 * hash + Objects.hashCode(this.proprietario);
-        hash = 89 * hash + Objects.hashCode(this.contrato);
+        int hash = 3;
+        hash = 61 * hash + Objects.hashCode(this.nomeLocal);
+        hash = 61 * hash + Objects.hashCode(this.proprietario);
+        hash = 61 * hash + Objects.hashCode(this.diaria);
         return hash;
     }
 
@@ -61,18 +61,19 @@ public class Local {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Local other = (Local) obj;
+        final Escritorio other = (Escritorio) obj;
         if (!Objects.equals(this.nomeLocal, other.nomeLocal)) {
             return false;
         }
         if (!Objects.equals(this.proprietario, other.proprietario)) {
             return false;
         }
+        if (!Objects.equals(this.diaria, other.diaria)) {
+            return false;
+        }
         return true;
     }
 
- 
 
-    
         
 }

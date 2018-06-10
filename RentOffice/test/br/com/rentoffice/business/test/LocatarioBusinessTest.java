@@ -8,6 +8,8 @@ package br.com.rentoffice.business.test;
 import br.com.rentoffice.business.LocatarioBusiness;
 import br.com.rentoffice.dominio.Endereco;
 import br.com.rentoffice.dominio.Locatario;
+import br.com.rentoffice.dominio.Usuario;
+import br.com.rentoffice.repositorio.Repositorio;
 
 /**
  *
@@ -15,25 +17,12 @@ import br.com.rentoffice.dominio.Locatario;
  */
 public class LocatarioBusinessTest {
     
-    public static void main(String[] args){
-        LocatarioBusiness lb = new LocatarioBusiness();
-        
-        Locatario lo = new Locatario();
-        lo.setNomeLT("Juninho ");
-        
-        //Bem Vindo ao Mundo de Juninho
-        Endereco end1 = new Endereco();
-        end1.setCep(1234591449);
-        end1.setBairro("Cidade de Deus");
-        end1.setCidade("Morumbi");
-        end1.setEstado("Corinthias");
-        end1.setComplemento("Casa sobre a agua");
-        end1.setRua("Rua Juninho da Se");
-        
-        try{
-            lb.salvarLocatario(lo);
-        }catch(UnsupportedOperationException ex){
-            System.out.println(ex.getMessage());
+    public Locatario buscarClientePorUsuario(Usuario usuario) {
+        for(Locatario cliente: Repositorio.locatarioDBFake){
+            if(cliente.getNomeUsuario().equals(usuario.getNomeUsuario())){
+                return cliente;
+            }
+        }       
+        return null;
     }
-  }
-}
+    }

@@ -5,9 +5,9 @@
  */
 package br.com.rentoffice.business.test;
 
-import br.com.rentoffice.business.LocalBusiness;
+import br.com.rentoffice.business.EscritorioBusiness;
 import br.com.rentoffice.dominio.Endereco;
-import br.com.rentoffice.dominio.Local;
+import br.com.rentoffice.dominio.Escritorio;
 
 /**
  *
@@ -16,9 +16,9 @@ import br.com.rentoffice.dominio.Local;
 public class LocalBusinessTest {
     
         public static void main(String[] args){
-        LocalBusiness lb = new LocalBusiness();
+        EscritorioBusiness lb = new EscritorioBusiness();
         
-        Local lo = new Local();
+        Escritorio lo = new Escritorio();
         lo.setNomeLocal("Jerusalem");
         lo.setProprietario("Jesus");
         lo.setContrato("Vitalicio");

@@ -7,6 +7,8 @@ package br.com.rentoffice.business.test;
 
 import br.com.rentoffice.business.LocadorBusiness;
 import br.com.rentoffice.dominio.Locador;
+import br.com.rentoffice.dominio.Usuario;
+import br.com.rentoffice.repositorio.Repositorio;
 
 /**
  *
@@ -14,18 +16,12 @@ import br.com.rentoffice.dominio.Locador;
  */
 public class LocadorBusinessTest {
     
-        public static void main(String[] args){
-        LocadorBusiness lb = new LocadorBusiness();
-        
-        Locador lo = new Locador();
-        lo.setNomeLD("Cleber");
-        lo.setCNPJ("4196019");
-        
-        try{
-            lb.salvarLocador(lo);
-        }catch(UnsupportedOperationException ex){
-            System.out.println(ex.getMessage());
+    public Locador buscarLocadorPorUsuario(Usuario usuario) {
+        for(Locador locador: Repositorio.locadorDBFake){
+            if(locador.getNomeUsuario().equals(usuario.getNomeUsuario())){
+               return locador; 
+            }                      
+        }
+        return null;  
     }
-  }
 }
-
