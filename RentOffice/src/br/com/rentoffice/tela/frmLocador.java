@@ -229,7 +229,12 @@ public class frmLocador extends javax.swing.JFrame {
     }//GEN-LAST:event_txtLocalEsActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
-
+        EscritorioB exibirescritorio = new EscritorioB();
+      //  JOptionPane.showMessageDialog("Bem vindo cliente: " + exibirescritorio.setNomeEscritorioB);
+        
+        exibirescritorio.setNomeEscritorioB("");
+        exibirescritorio.setDiariaEscritorioB("");
+        JOptionPane.showMessageDialog(null,"Escritorio:" +exibirescritorio.setNomeEscritorioB(exibirescritorio));
     }//GEN-LAST:event_btnConsultarActionPerformed
 
     private void txtCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCategoriaActionPerformed
