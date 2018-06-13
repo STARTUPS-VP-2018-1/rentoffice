@@ -65,7 +65,7 @@ public class frmCadastro extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setBackground(new java.awt.Color(153, 0, 153));
+        setBackground(new java.awt.Color(28, 28, 28));
         setMinimumSize(new java.awt.Dimension(600, 500));
         setUndecorated(true);
         setResizable(false);
