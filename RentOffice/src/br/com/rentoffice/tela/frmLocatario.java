@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author laboratorio
+ * @author
  */
 public class frmLocatario extends javax.swing.JFrame {
 
@@ -53,10 +53,11 @@ public class frmLocatario extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 255));
@@ -69,26 +70,30 @@ public class frmLocatario extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(28, 28, 28));
 
+        jLabel10.setBackground(null);
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(240, 240, 240));
         jLabel10.setText("Básico:");
 
         jLabel17.setToolTipText("");
 
-        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel5.setBackground(null);
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(240, 240, 240));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Padrão:");
         jLabel5.setOpaque(true);
 
-        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel7.setBackground(null);
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(240, 240, 240));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Plus");
         jLabel7.setOpaque(true);
 
-        jButton3.setForeground(new java.awt.Color(0, 153, 153));
+        jButton3.setForeground(null);
         jButton3.setText("Selecionar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,14 +122,15 @@ public class frmLocatario extends javax.swing.JFrame {
         jLabel4.setText("R$80,00");
         jLabel4.setOpaque(true);
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setBackground(new java.awt.Color(28, 28, 28));
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(240, 240, 240));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Escolha sua categoria:");
         jLabel1.setAlignmentY(0.0F);
         jLabel1.setOpaque(true);
 
-        jButton2.setForeground(new java.awt.Color(0, 153, 153));
+        jButton2.setForeground(null);
         jButton2.setText("Selecionar");
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -135,16 +141,10 @@ public class frmLocatario extends javax.swing.JFrame {
 
         jLabel19.setToolTipText("");
 
+        jLabel2.setForeground(new java.awt.Color(240, 240, 240));
         jLabel2.setText("jLabel2");
 
-        jButton4.setText("Sair");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-
-        jButton6.setForeground(new java.awt.Color(0, 153, 153));
+        jButton6.setForeground(null);
         jButton6.setText("Selecionar");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,19 +164,16 @@ public class frmLocatario extends javax.swing.JFrame {
                             .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(43, 43, 43)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jLabel5))
-                                .addGap(56, 56, 56)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jButton4))
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel5))
+                        .addGap(56, 56, 56)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -215,7 +212,7 @@ public class frmLocatario extends javax.swing.JFrame {
                         .addComponent(jLabel2)
                         .addGap(3, 3, 3)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(23, 23, 23)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -234,9 +231,7 @@ public class frmLocatario extends javax.swing.JFrame {
                                 .addGap(60, 60, 60)
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton4)))))
+                                .addComponent(jLabel7)))))
                 .addGap(15, 15, 15)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -272,6 +267,20 @@ public class frmLocatario extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        jButton1.setText("Alugar Escritorio Selecionado");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setText("Sair");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -279,9 +288,17 @@ public class frmLocatario extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(61, 61, 61))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addComponent(jButton4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1)
+                        .addGap(78, 78, 78))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -290,7 +307,11 @@ public class frmLocatario extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1)
+                            .addComponent(jButton4))))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -306,66 +327,72 @@ public class frmLocatario extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-     DefaultTableModel  modeloTable = (DefaultTableModel) jTable1.getModel();
-        
+        DefaultTableModel modeloTable = (DefaultTableModel) jTable1.getModel();
+
         //REMOVER lINHAS
         while (modeloTable.getRowCount() > 0) {
             modeloTable.removeRow(0);
         }
 
-        for(EscritorioP escritorio: Repositorio.escritorioPDFake){
-            modeloTable.addRow(new Object[] {escritorio.getNomeEscritorioP(),
-                                             escritorio.getEnderecoEscritorioP(),
-                                             escritorio.getProprietarioEscritorioP(),
-                                             escritorio.getDiariaEscritorioP()});
+        for (EscritorioP escritorio : Repositorio.escritorioPDFake) {
+            modeloTable.addRow(new Object[]{escritorio.getNomeEscritorioP(),
+                escritorio.getEnderecoEscritorioP(),
+                escritorio.getProprietarioEscritorioP(),
+                escritorio.getDiariaEscritorioP()});
         }
-         for (int i = Repositorio.escritorioBDFake.size(); i < 4; i++) {
-            modeloTable.addRow(new Object[] {"","",""});                // TODO add your handling code here:
+        for (int i = Repositorio.escritorioBDFake.size(); i < 4; i++) {
+            modeloTable.addRow(new Object[]{"", "", ""});                // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
     }
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-       DefaultTableModel  modeloTable = (DefaultTableModel) jTable1.getModel();
-        
+        DefaultTableModel modeloTable = (DefaultTableModel) jTable1.getModel();
+
         //REMOVER lINHAS
         while (modeloTable.getRowCount() > 0) {
             modeloTable.removeRow(0);
         }
 
-        for(EscritorioB escritorio: Repositorio.escritorioBDFake){
-            modeloTable.addRow(new Object[] {escritorio.getNomeEscritorioB(),
-                                             escritorio.getEnderecoEscritorioB(),
-                                             escritorio.getProprietarioEscritorioB(),
-                                             escritorio.getDiariaEscritorioB()});
+        for (EscritorioB escritorio : Repositorio.escritorioBDFake) {
+            modeloTable.addRow(new Object[]{escritorio.getNomeEscritorioB(),
+                escritorio.getEnderecoEscritorioB(),
+                escritorio.getProprietarioEscritorioB(),
+                escritorio.getDiariaEscritorioB()});
         }
-         for (int i = Repositorio.escritorioBDFake.size(); i < 4; i++) {
-            modeloTable.addRow(new Object[] {"","",""});    
-        }    
+        for (int i = Repositorio.escritorioBDFake.size(); i < 4; i++) {
+            modeloTable.addRow(new Object[]{"", "", ""});
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-    Login frm = new Login();
+        Login frm = new Login();
         frm.setVisible(true);
         dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-    DefaultTableModel  modeloTable = (DefaultTableModel) jTable1.getModel();
-        
+        DefaultTableModel modeloTable = (DefaultTableModel) jTable1.getModel();
+
         //REMOVER lINHAS
         while (modeloTable.getRowCount() > 0) {
             modeloTable.removeRow(0);
         }
 
-        for(EscritorioD escritorio: Repositorio.escritorioDFake){
-            modeloTable.addRow(new Object[] {escritorio.getNomeEscritorioD(),
-                                             escritorio.getEnderecoEscritorioD(),
-                                             escritorio.getProprietarioEscritorioD(),
-                                             escritorio.getDiariaEscritorioD()});
+        for (EscritorioD escritorio : Repositorio.escritorioDFake) {
+            modeloTable.addRow(new Object[]{escritorio.getNomeEscritorioD(),
+                escritorio.getEnderecoEscritorioD(),
+                escritorio.getProprietarioEscritorioD(),
+                escritorio.getDiariaEscritorioD()});
         }
-         for (int i = Repositorio.escritorioBDFake.size(); i < 4; i++) {
-            modeloTable.addRow(new Object[] {"","",""});    
+        for (int i = Repositorio.escritorioBDFake.size(); i < 4; i++) {
+            modeloTable.addRow(new Object[]{"", "", ""});
         }            // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        frmLocatarioAlugar frm = new frmLocatarioAlugar();
+        frm.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -418,6 +445,7 @@ public class frmLocatario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;

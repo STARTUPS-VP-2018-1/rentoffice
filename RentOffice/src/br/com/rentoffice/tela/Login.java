@@ -255,7 +255,7 @@ public class Login extends javax.swing.JFrame {
 
         if (loginBusiness.validaUsuario(novoUsuario)) {
             Locatario clienteEncontrado = clienteBusiness.
-            buscarClientePorUsuario(novoUsuario);
+                    buscarClientePorUsuario(novoUsuario);
             if (clienteEncontrado != null) {
                 frmLocatario clienteFrame = new frmLocatario(clienteEncontrado);
                 clienteFrame.setVisible(true);
