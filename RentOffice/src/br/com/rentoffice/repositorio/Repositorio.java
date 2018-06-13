@@ -51,6 +51,14 @@ public class Repositorio {
         lo3.setProprietarioEscritorioD("Bruno");
         lo3.setDiariaEscritorioD("R$14,44");
         Repositorio.escritorioDFake.add(lo3);
+        
+        EscritorioD lo4 = new EscritorioD();
+        lo4.setNomeEscritorioD("Escritorio TEST");
+        lo4.setProprietarioEscritorioD("Bruno");
+        lo4.setDiariaEscritorioD("R$14,44");
+        lo4.setEnderecoEscritorioD("Rua Jabiaçu");
+        
+        Repositorio.escritorioDFake.add(lo4);
     }
 
 }

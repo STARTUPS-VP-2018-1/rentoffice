@@ -9,9 +9,12 @@ import br.com.rentoffice.dominio.EscritorioB;
 import br.com.rentoffice.dominio.EscritorioD;
 import br.com.rentoffice.dominio.EscritorioP;
 import br.com.rentoffice.dominio.Locador;
+import br.com.rentoffice.dominio.Endereco;
+
 
 import br.com.rentoffice.repositorio.Repositorio;
 import static br.com.rentoffice.repositorio.Repositorio.escritorioDFake;
+import static java.util.Objects.equals;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -59,6 +62,10 @@ public class frmLocador extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tableConsultar = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        txtNomeProp = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtEndereco = new javax.swing.JTextField();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -72,6 +79,7 @@ public class frmLocador extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jLabel2.setText("Nome do escritorio:");
 
@@ -99,7 +107,7 @@ public class frmLocador extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(51, 153, 255));
-        jLabel6.setText("Cadastrar Escritorio");
+        jLabel6.setText("Cadastrar Escritório");
 
         jLabel7.setText("Valor da diaria:");
 
@@ -154,80 +162,110 @@ public class frmLocador extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Nome do proprietário:");
+
+        txtNomeProp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomePropActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Endereço do escritorio:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addGap(47, 47, 47))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel7))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtLocalEs, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDiaria, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnCadastrar)
-                        .addGap(26, 26, 26)
-                        .addComponent(btnAlterar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnConsultar))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(jLabel6)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addContainerGap())
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnCadastrar)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnAlterar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnConsultar))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addComponent(jLabel4)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(txtEndereco))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addComponent(jLabel2)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(txtLocalEs, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addComponent(jLabel1)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(txtNomeProp, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel3)
+                                                .addComponent(jLabel7))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(txtDiaria, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(txtCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGap(0, 5, Short.MAX_VALUE)))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel5))
-                    .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jLabel5))
+                .addGap(1, 1, 1)
                 .addComponent(jLabel6)
-                .addGap(18, 18, 18)
+                .addGap(24, 24, 24)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtNomeProp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtLocalEs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(txtDiaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnCadastrar)
-                            .addComponent(btnAlterar)
-                            .addComponent(btnConsultar)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
                     .addComponent(txtCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(txtDiaria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCadastrar)
+                    .addComponent(btnAlterar)
+                    .addComponent(btnConsultar))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(42, 42, 42))
         );
 
-        setSize(new java.awt.Dimension(361, 350));
+        setSize(new java.awt.Dimension(345, 424));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
-        // TODO add your handling code here:
+           // TODO add your handling code here:
     }//GEN-LAST:event_btnAlterarActionPerformed
     
     
@@ -246,13 +284,18 @@ public class frmLocador extends javax.swing.JFrame {
 
         for(EscritorioB escritorio: Repositorio.escritorioBDFake){
             modeloTable.addRow(new Object[] {escritorio.getNomeEscritorioB(),
-                                             escritorio.getDiariaEscritorioB(),
-                                             escritorio.getEnderecoEscritorioB()});
+                                             escritorio.getCategoriaB(),
+                                             escritorio.getDiariaEscritorioB()});
         }
         for(EscritorioD escritorio: Repositorio.escritorioDFake){
             modeloTable.addRow(new Object[] {escritorio.getNomeEscritorioD(),
-                                             escritorio.(),
+                                             escritorio.getCategoriaD(),
                                              escritorio.getDiariaEscritorioD()});
+        }
+         for(EscritorioP escritorio: Repositorio.escritorioPDFake){
+            modeloTable.addRow(new Object[] {escritorio.getNomeEscritorioP(),
+                                             escritorio.getCategoriaP(),
+                                             escritorio.getDiariaEscritorioP()});
         }
 
         for (int i = Repositorio.escritorioBDFake.size(); i < 4; i++) {
@@ -275,16 +318,25 @@ public class frmLocador extends javax.swing.JFrame {
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         EscritorioB novoLocalB = new EscritorioB();
+        novoLocalB.setProprietarioEscritorioB(txtNomeProp.getText());
         novoLocalB.setNomeEscritorioB(txtLocalEs.getText());
         novoLocalB.setDiariaEscritorioB(txtDiaria.getText());
+        novoLocalB.setEnderecoEscritorioB(txtEndereco.getText());
+
 
         EscritorioD novoLocalD = new EscritorioD();
+        novoLocalD.setProprietarioEscritorioD(txtNomeProp.getText());
         novoLocalD.setNomeEscritorioD(txtLocalEs.getText());
         novoLocalD.setDiariaEscritorioD(txtDiaria.getText());
+        novoLocalD.setEnderecoEscritorioD(txtEndereco.getText());
+
 
         EscritorioP novoLocalP = new EscritorioP();
+        novoLocalP.setProprietarioEscritorioP(txtNomeProp.getText());
         novoLocalP.setNomeEscritorioP(txtLocalEs.getText());
         novoLocalP.setDiariaEscritorioP(txtDiaria.getText());
+        novoLocalP.setEnderecoEscritorioP(txtEndereco.getText());
+
 
         if ((txtLocalEs.getText() == null || txtDiaria.getText().trim().isEmpty())) {
             JOptionPane.showMessageDialog(null, "Todos os campos devem estar preenchidos !");
@@ -293,22 +345,28 @@ public class frmLocador extends javax.swing.JFrame {
             if (txtCategoria.getSelectedItem().equals("Básico")) {
 
                 Repositorio.escritorioBDFake.add(novoLocalB);
+                txtNomeProp.setText("");
                 txtLocalEs.setText("");
                 txtDiaria.setText("");
+                txtEndereco.setText("");
             }
 
             if (txtCategoria.getSelectedItem().equals("Padrão")) {
 
                 Repositorio.escritorioDFake.add(novoLocalD);
+                txtNomeProp.setText("");
                 txtLocalEs.setText("");
                 txtDiaria.setText("");
+                txtEndereco.setText("");
             }
 
             if (txtCategoria.getSelectedItem().equals("Plus")) {
 
                 Repositorio.escritorioPDFake.add(novoLocalP);
+                txtNomeProp.setText("");
                 txtLocalEs.setText("");
                 txtDiaria.setText("");
+                txtEndereco.setText("");
             }
             JOptionPane.showMessageDialog(null, "Escritório cadastrado com sucesso");
         }
@@ -319,6 +377,10 @@ public class frmLocador extends javax.swing.JFrame {
         frm.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtNomePropActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomePropActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomePropActionPerformed
 
     /**
      * @param args the command line arguments
@@ -367,8 +429,10 @@ public class frmLocador extends javax.swing.JFrame {
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton btnConsultar;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -377,7 +441,9 @@ public class frmLocador extends javax.swing.JFrame {
     private javax.swing.JTable tableConsultar;
     private javax.swing.JComboBox<String> txtCategoria;
     private javax.swing.JTextField txtDiaria;
+    private javax.swing.JTextField txtEndereco;
     private javax.swing.JTextField txtLocalEs;
+    private javax.swing.JTextField txtNomeProp;
     // End of variables declaration//GEN-END:variables
     frmLocador locador;
 

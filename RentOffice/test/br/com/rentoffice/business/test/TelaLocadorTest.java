@@ -18,44 +18,44 @@ import javax.swing.JOptionPane;
 public class TelaLocadorTest {
     
      
-        EscritorioD novoLocal new = EscritorioD();
-        lo.setNomeEscritorioB("Prudente");
-        lo.setDiariaEscritorioB("99,99");
+       // EscritorioD novoLocal new = EscritorioD();
+       // lo.setNomeEscritorioB("Prudente");
+       // lo.setDiariaEscritorioB("99,99");
 
         EscritorioD novoLocalD = new EscritorioD();
       
-        novoLocalD.setNomeEscritorioD("Paulista");
-        novoLocalD.setDiariaEscritorioD("R$99,00");
+      //  novoLocalD.setNomeEscritorioD("Paulista");
+       // novoLocalD.setDiariaEscritorioD("R$99,00");
 
-        EscritorioP novoLocalP = new EscritorioP();
-        novoLocalP.setNomeEscritorioP("Ema");
-        novoLocalP.setDiariaEscritorioP("15,00");
+      //  EscritorioP novoLocalP = new EscritorioP();
+      //  novoLocalP.setNomeEscritorioP("Ema");
+       // novoLocalP.setDiariaEscritorioP("15,00");
 
-        if (NomeEscritorioP == null || DiariaEscritorioP == null) {
-            JOptionPane.showMessageDialog(null, "Todos os campos devem estar preenchidos !");
-        } else {
+      //  if (NomeEscritorioP == null || DiariaEscritorioP == null) {
+       //     JOptionPane.showMessageDialog(null, "Todos os campos devem estar preenchidos !");
+      //  } else {
 
-            if (txtCategoria.getSelectedItem().equals("Básico")) {
+         //   if (txtCategoria.getSelectedItem().equals("Básico")) {
 
-                Repositorio.escritorioBDFake.add(novoLocalB);
-                txtLocalEs.setText("");
-                txtDiaria.setText("");
-            }
+        //////        Repositorio.escritorioBDFake.add(novoLocalB);
+         //       txtLocalEs.setText("");
+        //        txtDiaria.setText("");
+        //    }
 
-            if (txtCategoria.getSelectedItem().equals("Padrão")) {
+        //    if (txtCategoria.getSelectedItem().equals("Padrão")) {
+//
+            //    Repositorio.escritorioDFake.add(novoLocalD);
+        //        txtLocalEs.setText("");
+           //     txtDiaria.setText("");
+          //  }
 
-                Repositorio.escritorioDFake.add(novoLocalD);
-                txtLocalEs.setText("");
-                txtDiaria.setText("");
-            }
+           // if (txtCategoria.getSelectedItem().equals("Plus")) {
 
-            if (txtCategoria.getSelectedItem().equals("Plus")) {
-
-                Repositorio.escritorioPDFake.add(novoLocalP);
-                txtLocalEs.setText("");
-                txtDiaria.setText("");
-            }
-            JOptionPane.showMessageDialog(null, "Escritório cadastrado com sucesso");
-        }
+           //     Repositorio.escritorioPDFake.add(novoLocalP);
+           //     txtLocalEs.setText("");
+            //    txtDiaria.setText("");
+          //  }
+           // JOptionPane.showMessageDialog(null, "Escritório cadastrado com sucesso");
+      //  }
     }                         
 

@@ -11,12 +11,13 @@ import java.util.Objects;
  *
  * @author schor
  */
-public class EscritorioP {
+public class EscritorioP extends Usuario {
 
     private String nomeEscritorioP;
-    private Endereco enderecoEscritorioP;
+    private String enderecoEscritorioP;
     private String proprietarioEscritorioP;
     private String diariaEscritorioP;
+    private String categoriaP = "Plus";
 
     public String getNomeEscritorioP() {
         return nomeEscritorioP;
@@ -26,13 +27,15 @@ public class EscritorioP {
         this.nomeEscritorioP = nomeEscritorioP;
     }
 
-    public Endereco getEnderecoEscritorioP() {
+    public String getEnderecoEscritorioP() {
         return enderecoEscritorioP;
     }
 
-    public void setEnderecoEscritorioP(Endereco enderecoEscritorioP) {
+    public void setEnderecoEscritorioP(String enderecoEscritorioP) {
         this.enderecoEscritorioP = enderecoEscritorioP;
     }
+
+       
 
     public String getProprietarioEscritorioP() {
         return proprietarioEscritorioP;
@@ -50,13 +53,22 @@ public class EscritorioP {
         this.diariaEscritorioP = diariaEscritorioP;
     }
 
+    public String getCategoriaP() {
+        return categoriaP;
+    }
+
+    public void setCategoriaP(String categoriaP) {
+        this.categoriaP = categoriaP;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 97 * hash + Objects.hashCode(this.nomeEscritorioP);
-        hash = 97 * hash + Objects.hashCode(this.enderecoEscritorioP);
-        hash = 97 * hash + Objects.hashCode(this.proprietarioEscritorioP);
-        hash = 97 * hash + Objects.hashCode(this.diariaEscritorioP);
+        int hash = 3;
+        hash = 43 * hash + Objects.hashCode(this.nomeEscritorioP);
+        hash = 43 * hash + Objects.hashCode(this.enderecoEscritorioP);
+        hash = 43 * hash + Objects.hashCode(this.proprietarioEscritorioP);
+        hash = 43 * hash + Objects.hashCode(this.diariaEscritorioP);
+        hash = 43 * hash + Objects.hashCode(this.categoriaP);
         return hash;
     }
 
@@ -81,10 +93,15 @@ public class EscritorioP {
         if (!Objects.equals(this.diariaEscritorioP, other.diariaEscritorioP)) {
             return false;
         }
+        if (!Objects.equals(this.categoriaP, other.categoriaP)) {
+            return false;
+        }
         if (!Objects.equals(this.enderecoEscritorioP, other.enderecoEscritorioP)) {
             return false;
         }
         return true;
     }
+
+   
 
 }
