@@ -11,7 +11,9 @@ import br.com.rentoffice.dominio.EscritorioP;
 import br.com.rentoffice.dominio.Locador;
 
 import br.com.rentoffice.repositorio.Repositorio;
+import static br.com.rentoffice.repositorio.Repositorio.escritorioDFake;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -30,7 +32,9 @@ public class frmLocador extends javax.swing.JFrame {
         initComponents();
         jLabel5.setText("Bem vindo: " + locador.getNomeUsuario());
     }
-
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -53,7 +57,7 @@ public class frmLocador extends javax.swing.JFrame {
         btnConsultar = new javax.swing.JButton();
         txtCategoria = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        TableConsultar = new javax.swing.JTable();
+        tableConsultar = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -122,7 +126,7 @@ public class frmLocador extends javax.swing.JFrame {
             }
         });
 
-        TableConsultar.setModel(new javax.swing.table.DefaultTableModel(
+        tableConsultar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -141,7 +145,7 @@ public class frmLocador extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(TableConsultar);
+        jScrollPane1.setViewportView(tableConsultar);
 
         jButton1.setText("Sair");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -167,14 +171,16 @@ public class frmLocador extends javax.swing.JFrame {
                             .addComponent(txtLocalEs, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtDiaria, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel6)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnCadastrar)
-                        .addGap(18, 18, 18)
+                        .addGap(26, 26, 26)
                         .addComponent(btnAlterar)
                         .addGap(18, 18, 18)
                         .addComponent(btnConsultar))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(jLabel6)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(36, 36, 36)
@@ -213,25 +219,56 @@ public class frmLocador extends javax.swing.JFrame {
                     .addComponent(txtCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(361, 355));
+        setSize(new java.awt.Dimension(361, 350));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAlterarActionPerformed
-
+    
+    
     private void txtLocalEsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLocalEsActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtLocalEsActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
+        
+        DefaultTableModel  modeloTable = (DefaultTableModel) tableConsultar.getModel();
+        
+        //REMOVER lINHAS
+        while (modeloTable.getRowCount() > 0) {
+            modeloTable.removeRow(0);
+        }
 
+        for(EscritorioB escritorio: Repositorio.escritorioBDFake){
+            modeloTable.addRow(new Object[] {escritorio.getNomeEscritorioB(),
+                                             escritorio.getDiariaEscritorioB(),
+                                             escritorio.getEnderecoEscritorioB()});
+        }
+        for(EscritorioD escritorio: Repositorio.escritorioDFake){
+            modeloTable.addRow(new Object[] {escritorio.getNomeEscritorioD(),
+                                             escritorio.(),
+                                             escritorio.getDiariaEscritorioD()});
+        }
+
+        for (int i = Repositorio.escritorioBDFake.size(); i < 4; i++) {
+            modeloTable.addRow(new Object[] {"","",""});    
+        }    
+        //jScrollPane1.setViewportView(tableConsultar);
+
+    //EscritorioB exibirescritorio = new EscritorioB();
+      //  JOptionPane.showMessageDialog("Bem vindo cliente: " + exibirescritorio.setNomeEscritorioB);
+        
+        //exibirescritorio.setNomeEscritorioB("");
+        //exibirescritorio.setDiariaEscritorioB("");
+        
     }//GEN-LAST:event_btnConsultarActionPerformed
-
+    
+     
     private void txtCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCategoriaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCategoriaActionPerformed
@@ -326,7 +363,6 @@ public class frmLocador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable TableConsultar;
     private javax.swing.JButton btnAlterar;
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton btnConsultar;
@@ -338,6 +374,7 @@ public class frmLocador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tableConsultar;
     private javax.swing.JComboBox<String> txtCategoria;
     private javax.swing.JTextField txtDiaria;
     private javax.swing.JTextField txtLocalEs;

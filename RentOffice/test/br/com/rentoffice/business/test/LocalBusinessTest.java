@@ -5,9 +5,11 @@
  */
 package br.com.rentoffice.business.test;
 
-import br.com.rentoffice.business.EscritorioBusiness;
+
+import br.com.rentoffice.business.EscritorioBBusinee;
 import br.com.rentoffice.dominio.Endereco;
-import br.com.rentoffice.dominio.Escritorio;
+import br.com.rentoffice.dominio.EscritorioB;
+
 
 /**
  *
@@ -16,12 +18,12 @@ import br.com.rentoffice.dominio.Escritorio;
 public class LocalBusinessTest {
     
         public static void main(String[] args){
-        EscritorioBusiness lb = new EscritorioBusiness();
+        EscritorioBBusinee lb = new EscritorioBBusinee();
         
-        Escritorio lo = new Escritorio();
-        lo.setNomeLocal("Jerusalem");
-        lo.setProprietario("Jesus");
-        lo.setContrato("Vitalicio");
+        EscritorioB lo = new EscritorioB();
+        lo.setNomeEscritorioB("Jerusalem");
+        lo.setProprietarioEscritorioB("Jesus");
+        lo.setDiariaEscritorioB("Vitalicio");
         
         Endereco end1 = new Endereco();
         end1.setCep(1234591449);
@@ -30,7 +32,7 @@ public class LocalBusinessTest {
         end1.setNumero(4919);
 
         try{
-            lb.salvarLocal(lo);
+            //lb.salvarLocal(lo);
         }catch(UnsupportedOperationException ex){
             System.out.println(ex.getMessage());
     }

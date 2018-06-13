@@ -39,14 +39,18 @@ public class Repositorio {
         lo.setSenha("123");
         lo.setCNPJ("4196019");
         Repositorio.locatarioDBFake.add(lo);
-    }
 
-    static {
-        EscritorioB lo = new EscritorioB();
-        lo.setNomeEscritorioB("Escritorio TEST");
-        lo.setProprietarioEscritorioB("Bruno");
-        lo.setDiariaEscritorioB("R$14,44");
-        Repositorio.escritorioBDFake.add(lo);
+        EscritorioB lo2 = new EscritorioB();
+        lo2.setNomeEscritorioB("Escritorio TEST");
+        lo2.setProprietarioEscritorioB("Bruno");
+        lo2.setDiariaEscritorioB("R$14,44");
+        Repositorio.escritorioBDFake.add(lo2);
+        
+        EscritorioD lo3 = new EscritorioD();
+        lo3.setNomeEscritorioD("Escritorio 2");
+        lo3.setProprietarioEscritorioD("Bruno");
+        lo3.setDiariaEscritorioD("R$14,44");
+        Repositorio.escritorioDFake.add(lo3);
     }
 
 }

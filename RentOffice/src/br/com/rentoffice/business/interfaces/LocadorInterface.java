@@ -5,6 +5,7 @@
  */
 package br.com.rentoffice.business.interfaces;
 
+import br.com.rentoffice.dominio.EscritorioB;
 import br.com.rentoffice.dominio.Locador;
 import br.com.rentoffice.dominio.Usuario;
 import java.util.List;
@@ -21,4 +22,6 @@ public interface LocadorInterface {
     public List<Locador> buscarTodosLocadores();
     
      public Locador buscarLocadorPorUsuario(Usuario usuario);
+     
+    
 }
