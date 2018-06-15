@@ -17,7 +17,7 @@ public class EscritorioB {
     private String enderecoEscritorioB;
     private String proprietarioEscritorioB;
     private String diariaEscritorioB;
-    private String categoriaB = "Básico";
+    private final String categoriaB = "Básico";
 
     public String getNomeEscritorioB() {
         return nomeEscritorioB;
@@ -58,9 +58,7 @@ public class EscritorioB {
         return categoriaB;
     }
 
-    public void setCategoriaB(String categoriaB) {
-        this.categoriaB = categoriaB;
-    }
+   
 
     @Override
     public int hashCode() {

@@ -17,7 +17,7 @@ public class EscritorioP extends Usuario {
     private String enderecoEscritorioP;
     private String proprietarioEscritorioP;
     private String diariaEscritorioP;
-    private String categoriaP = "Plus";
+    private final String categoriaP = "Plus";
 
     public String getNomeEscritorioP() {
         return nomeEscritorioP;
@@ -34,8 +34,6 @@ public class EscritorioP extends Usuario {
     public void setEnderecoEscritorioP(String enderecoEscritorioP) {
         this.enderecoEscritorioP = enderecoEscritorioP;
     }
-
-       
 
     public String getProprietarioEscritorioP() {
         return proprietarioEscritorioP;
@@ -55,10 +53,6 @@ public class EscritorioP extends Usuario {
 
     public String getCategoriaP() {
         return categoriaP;
-    }
-
-    public void setCategoriaP(String categoriaP) {
-        this.categoriaP = categoriaP;
     }
 
     @Override
@@ -101,7 +95,5 @@ public class EscritorioP extends Usuario {
         }
         return true;
     }
-
-   
 
 }
